@@ -1,11 +1,15 @@
-<h1><?php print hello('John') ?></h1>
+<?php 
 
 
-<ul>
-<?php while (have_posts()) : the_post(); ?>
-	<li>
-		<?php the_title() ?>
-		<?php the_excerpt() ?>		
-	</li>
-<?php endwhile ?>
-</ul>
+function listWrapper($content){
+	echo '<li>' . $content . '.</li>'; 
+}
+
+$animals = ['cat', 'dog', 'koala', 'turtle'];
+
+echo '<ul>';
+foreach($animals as $animal){
+	listWrapper($animal);
+}
+
+echo '</ul>';
