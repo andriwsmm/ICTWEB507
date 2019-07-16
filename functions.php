@@ -1,5 +1,4 @@
+  
 <?php 
-
-function hello($name){
-	return "Hello {$name}";
-}
+// show featured image in the post admin screen
+add_theme_support( 'post-thumbnails' );

@@ -4,3 +4,42 @@ Author: Andriws.mm
 Description: Exercise theme test at mindroom. july/2019
 Version: 1.0
 */
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.row {
+    display: flex; /* display in a row*/
+    list-style: none; /* remove bullet list */
+    padding: 0;
+    flex-wrap: wrap; /* make row stack if column is too narrow */
+}
+
+.column {
+    flex: 1; /* make columns the same width */
+    padding: 1em;
+    flex-basis: 300px; /* if columns narrower than 300px, make it stack */
+}
+
+.column img {
+    width: 100%; /* stop images from overflowing the parent */
+    height: auto;
+}
+
+.card {
+    box-shadow: 0 0 4px 0 #00000050;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column; 
+}
+
+.card-title {
+    margin: 0;
+}
+
+.card-image {
+    order: -1; /* move image to above the title which has order of 1 */
+    margin: -1.5em -1.5em 1em; /* make image touch the edget of the card */
+}
