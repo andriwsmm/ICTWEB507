@@ -1,22 +1,25 @@
-  
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <title>About Food</title>
-        <link rel="stylesheet" href="<?php echo get_stylesheet_uri() ?>" />
-    </head>
-    <body>
-        <h1>Food News</h1>
-        <ul class="row">
-            <? while (have_posts()) : the_post(); ?>
-                <li class="column">
-                    <div class="card">
-                        <h2 class="card-title"><? the_title() ?></h2>
-                        <div class="card-image"><? the_post_thumbnail(); ?></div>
-                        <div class="card-content"><? the_excerpt() ?></div>
-                    </div>
-                </li>
-            <? endwhile ?>
-        </ul>
-    </body>
-</html>
+<head>
+	<title>Food as medicine!</title>
+	<link rel="stylesheet" href="http://playground.local/wp-content/themes/PlayTheme/style.css">
+
+</head>
+
+
+<body>
+	<h1>About Food</h1>
+	<ul class="grid">
+	<?php while(have_posts()) : the_post(); ?>
+		<li class="grid-item">
+			<article class="card">
+				<small><?php print get_the_date() ?></small>
+				<h2 class="post-title"><?php the_title() ?></h2>
+				<?php the_post_thumbnail('thumbnail'); ?>
+				<?php the_excerpt() ?>
+				<a href="<?php the_permalink ?>" >Read More</a>
+			
+			</article>
+		</li>
+	<?php endwhile ?>		
+	</ul>
+</body>
+
